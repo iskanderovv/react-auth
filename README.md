@@ -1,6 +1,6 @@
 # Auth web app
 
-The sign in and account pages for the [OAuth service](../go-auth). React, Vite and TypeScript. It is a separate project that talks to the API over HTTP and shares nothing with it but the contract.
+The sign in and account pages for the [OAuth service](https://github.com/iskanderovv/alifco-auth-go). React, Vite and TypeScript. It is a separate project that talks to the API over HTTP and shares nothing with it but the contract.
 
 - Sign in and sign up form with an email field (not wired yet) and Google, Facebook and Telegram
 - Account page: the profile, connected providers, connect and disconnect, sign out
