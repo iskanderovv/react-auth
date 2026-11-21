@@ -1,0 +1,15 @@
+{
+  "name": "Alifco",
+  "short_name": "Alifco",
+  "description": "Sign in or create your Alifco account with Google, Facebook or Telegram.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5f6f8",
+  "theme_color": "#f5f6f8",
+  "lang": "en",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
