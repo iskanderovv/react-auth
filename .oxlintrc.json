@@ -1,0 +1,79 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": [
+      "warn",
+      {
+        "allowConstantExport": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/shared/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@/features/**", "@/app/**"],
+                "message": "shared code must not depend on features or the app"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/features/session/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@/features/account/**", "@/features/sign-in/**", "@/app/**"],
+                "message": "the session feature must not depend on other features or the app"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/features/account/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@/features/sign-in/**", "@/app/**"],
+                "message": "features must not import each other or the app"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/features/sign-in/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@/features/account/**", "@/app/**"],
+                "message": "features must not import each other or the app"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
